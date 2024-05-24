@@ -29,7 +29,7 @@ function Mensagem_Gmail() {
  function sendGmail(){
   const formData = new FormData();
   Object.keys(campos).forEach(key => formData.append(key, campos[key]));
-  axios.post('http://localhost:3000/send_gmail', 
+  axios.post('http://localhost:4000/send_gmail', 
             formData,
             {
               headers: {
@@ -47,7 +47,7 @@ function handleFormSubmit(event){
   console.log(campos); 
   sendGmail(campos);
   
-    axios.post('http://localhost:3000/auth/cadastrar_envio', campos)
+    axios.post('http://localhost:4000/auth/cadastrar_envio', campos)
     .then(result => {
        if(result.data.Status){
         setCamnpos(result.data.Result);

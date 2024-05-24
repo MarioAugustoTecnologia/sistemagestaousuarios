@@ -13,7 +13,7 @@ const Perfil = () => {
   const {id} = useParams()
 
   useEffect(() => {
-    axios.get('http://localhost:3000/auth/usuario/'+id)
+    axios.get('http://localhost:4000/auth/usuario/'+id)
     .then(result => {
        setUsuarios({
         ...usuarios,         
@@ -32,11 +32,11 @@ const Perfil = () => {
   )
  
   const handlelogout = () => {
-    axios.get('http://localhost:3000/auth/logout')
+    axios.get('http://localhost:4000/auth/logout')
     .then(result => {
       if(result.data.Status){
           localStorage.removeItem('valid')
-          navigate('/adminlogin')
+          navigate('/')
       }
     })
   }

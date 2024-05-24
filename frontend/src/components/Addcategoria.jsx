@@ -20,7 +20,7 @@ const handleSubmit = (event) => {
 event.preventDefault();
 setErrors(validation(values));
 if(errors.nome === '' ){
-axios.post('http://localhost:3000/auth/add_categoria', values)
+axios.post('http://localhost:4000/auth/add_categoria', values)
 .then(result => {
   if(result.data.Status){
     navigate('/painel/categorias');
@@ -33,11 +33,11 @@ axios.post('http://localhost:3000/auth/add_categoria', values)
 
 
 const handlelogout = () => {
-  axios.get('http://localhost:3000/auth/logout')
+  axios.get('http://localhost:4000/auth/logout')
   .then(result => {
     if(result.data.Status){
         localStorage.removeItem('valid')
-        navigate('/adminlogin')
+        navigate('/')
     }
   })
 }

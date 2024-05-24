@@ -17,7 +17,7 @@ const UsuarioNome = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3000/auth/usuario/nome')
+    axios.get('http://localhost:4000/auth/usuario/nome')
     .then(result => {
       if(result.data.Status) {
         setUsuarioNome(result.data.Result);
@@ -29,7 +29,7 @@ const UsuarioNome = () => {
   }, [])
 
   const handleDelete = (id) => {
-    axios.delete('http://localhost:3000/auth/excluir_usuario/'+id)
+    axios.delete('http://localhost:4000/auth/excluir_usuario/'+id)
     .then(result => {
       if(result.data.Status){
         window.location.reload()
@@ -40,11 +40,11 @@ const UsuarioNome = () => {
   } 
 
   const handlelogout = () => {
-    axios.get('http://localhost:3000/auth/logout')
+    axios.get('http://localhost:4000/auth/logout')
     .then(result => {
       if(result.data.Status){
           localStorage.removeItem('valid')
-          navigate('/adminlogin')
+          navigate('/')
       }
     })
   } 
