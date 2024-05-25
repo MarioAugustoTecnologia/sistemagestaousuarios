@@ -18,7 +18,7 @@ axios.defaults.withCredentials = true;
 
 const handleSubmit = (event) => {
   event.preventDefault(); 
-  axios.post('https://sistemagestaousuarios-server.onrender.com/auth/adminlogin', values)
+  axios.post('http://localhost:4000/auth/adminlogin', values)
   .then(result => {
     if(result.data.loginStatus){
          localStorage.setItem('valid', true)
