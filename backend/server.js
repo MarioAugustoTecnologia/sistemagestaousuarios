@@ -12,7 +12,7 @@ const Logout = require('./Routes/Logout');
 const verifyRouter = require('./Routes/VerifyUsers');
 const QueryUsers = require('./Routes/QueryUsers');
 const QueryCategory = require('./Routes/QueryCategory')
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 10000;
 
 app.get('/', (req, res) => {
   res.send('Servidor ok!')
