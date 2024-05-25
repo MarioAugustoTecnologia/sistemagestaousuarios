@@ -11,7 +11,7 @@ const Painel = () => {
   axios.defaults.withCredentials = true;
     
   const handleLogout = () => {
-    axios.get('http://localhost:4000/auth/logout')
+    axios.get('https://sistemagestaousuarios-server.onrender.com/auth/logout')
     .then(result => {
       if(result.data.Status){ 
            localStorage.removeItem('valid')         
@@ -34,7 +34,7 @@ const Painel = () => {
   const [adminTotal, setAdminTotal] = useState([]); 
 
   const getAdminTotal = () => {
-    axios.get('http://localhost:4000/auth/admin_count')
+    axios.get('https://sistemagestaousuarios-server.onrender.com/auth/admin_count')
     .then(result => {
         if(result.data.Status){
             setAdminTotal(result.data.Result)
@@ -48,7 +48,7 @@ const Painel = () => {
   const [usuarioTotal, setUsuarioTotal] = useState([]); 
 
   const getUsuarioTotal = () => {
-    axios.get('http://localhost:4000/auth/user_count')
+    axios.get('https://sistemagestaousuarios-server.onrender.com/auth/user_count')
     .then(result => {
         if(result.data.Status){
             setUsuarioTotal(result.data.Result)
@@ -62,7 +62,7 @@ const Painel = () => {
   const [salarioTotal, setSalarioTotal] = useState([]); 
 
   const getSalariosTotal = () => {
-    axios.get('http://localhost:4000/auth/salario_count')
+    axios.get('https://sistemagestaousuarios-server.onrender.com/auth/salario_count')
     .then(result => {
         if(result.data.Status){
             setSalarioTotal(result.data.Result)
@@ -76,7 +76,7 @@ const Painel = () => {
   const [desTotal, setDesTotal] = useState([]);
   
   const getDesTotal = () => {
-    axios.get('http://localhost:4000/auth/des_count')
+    axios.get('https://sistemagestaousuarios-server.onrender.com/auth/des_count')
     .then(result => {
         if(result.data.Status){
             setDesTotal(result.data.Result)
@@ -90,7 +90,7 @@ const Painel = () => {
   const [TotalSAdmin, setTotalSAdmin] = useState([]);
 
   const getTotalSAdmin = () => {
-    axios.get('http://localhost:4000/auth/salarioad_count')
+    axios.get('https://sistemagestaousuarios-server.onrender.com/auth/salarioad_count')
     .then(result => {
         if(result.data.Status){
           setTotalSAdmin(result.data.Result)
@@ -104,7 +104,7 @@ const Painel = () => {
   const [TotalSDes, setTotalSDes] = useState([]);
 
   const getTotalSDes = () => {
-    axios.get('http://localhost:4000/auth/salariodes_count')
+    axios.get('https://sistemagestaousuarios-server.onrender.com/auth/salariodes_count')
     .then(result => {
         if(result.data.Status){
           setTotalSDes(result.data.Result)
@@ -118,7 +118,7 @@ const Painel = () => {
   const [admins, setAdmins] = useState([]);
 
   const getAdmins = () => {
-    axios.get('http://localhost:4000/auth/admin_list')
+    axios.get('https://sistemagestaousuarios-server.onrender.com/auth/admin_list')
     .then(result => {
         if(result.data.Status){
           setAdmins(result.data.Result)
@@ -130,7 +130,7 @@ const Painel = () => {
   }
 
   const handleDelete = (id) => {
-    axios.delete('http://localhost:4000/auth/excluir_usuario/'+id)
+    axios.delete('https://sistemagestaousuarios-server.onrender.com/auth/excluir_usuario/'+id)
     .then(result => {
       if(result.data.Status){
         window.location.reload()
