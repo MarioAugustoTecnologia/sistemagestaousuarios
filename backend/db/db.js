@@ -6,6 +6,7 @@ const conn = db.createConnection({
   user: process.env.USER,
   password: process.env.PASSWORD,
   database: process.env.DATABASE
+
 })
 
 conn.connect(function(err){
