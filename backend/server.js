@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
   res.send('Servidor ok!')
 })
 
-app.use(cors({origin: ["https://sistemagestaousuarios.onrender.com/"], 
+app.use(cors({origin: ["http://localhost:5173"], 
 methods: ["GET","POST", "PUT", "DELETE"],
 credentials: true 
 }));
