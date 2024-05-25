@@ -19,6 +19,7 @@ app.get('/', (req, res) => {
 })
 
 app.use(cors({origin: ["http://localhost:5173"], 
+allowedHeaders: ["http://localhost:5173"],
 methods: ["GET","POST", "PUT", "DELETE"],
 credentials: true 
 }));
