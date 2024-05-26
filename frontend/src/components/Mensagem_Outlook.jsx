@@ -27,7 +27,7 @@ function Mensagem_Outlook() {
     function sendOutlook(){
      const formData = new FormData();
      Object.keys(campos).forEach(key => formData.append(key, campos[key]));
-     axios.post('http://localhost:4000/send_outlook', 
+     axios.post('http://localhost:3000/send_outlook', 
                formData,
                {
                  headers: {
@@ -44,7 +44,7 @@ function Mensagem_Outlook() {
    }
 
    const handlelogout = () => {
-    axios.get('http://localhost:4000/auth/logout')
+    axios.get('http://localhost:3000/auth/logout')
     .then(result => {
       if(result.data.Status){
           localStorage.removeItem('valid')

@@ -21,7 +21,7 @@ const EditarUsuario = () => {
   const [categoria, setCategoria] = useState([]) 
 
     useEffect(() => {     
-      axios.get('http://localhost:4000/auth/categoria')
+      axios.get('http://localhost:3000/auth/categoria')
       .then(result => {
         if(result.data.Status){
           setCategoria(result.data.Result);
@@ -30,7 +30,7 @@ const EditarUsuario = () => {
         }
       }).catch(err => console.log(err))
        
-      axios.get('http://localhost:4000/auth/usuario/'+id)
+      axios.get('http://localhost:3000/auth/usuario/'+id)
       .then(result => {
         setUsuarios({
           ...usuarios,
@@ -54,7 +54,7 @@ const EditarUsuario = () => {
   
       setErrors(validation(usuarios));
       if(errors.nome === "" && errors.email === "" && errors.senha === "" && errors.fone === "" && errors.data_nascimento === "" && errors.cat_id === ""  &&  errors.salario === ""){
-      axios.put('http://localhost:4000/auth/atualizar_usuario/'+id, usuarios)
+      axios.put('http://localhost:3000/auth/atualizar_usuario/'+id, usuarios)
       .then(result => {
            if(result.data.Status){
             navigate('/painel/usuarios');
@@ -68,7 +68,7 @@ const EditarUsuario = () => {
     }  
 
     const handlelogout = () => {
-      axios.get('http://localhost:4000/auth/logout')
+      axios.get('http://localhost:3000/auth/logout')
       .then(result => {
         if(result.data.Status){
             localStorage.removeItem('valid')

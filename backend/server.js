@@ -21,8 +21,8 @@ const DeleteUser = require('./Routes/DeleteUser');
 const DeleteEmail = require('./Routes/DeleteEmail');
 const sendGmail = require('./Routes/sendGmail');
 const sendOutlook = require('./Routes/sendOutlook');
-const whats = require('./Routes/Whats.js');
-const port = process.env.PORT || 4000;
+const whats = require('./Routes/Whats');
+const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.send('Servidor ok!')
@@ -55,14 +55,15 @@ app.use('/auth', QueryEmails);
 app.use('/auth', UpdateUsers);
 app.use('/auth', DeleteUser);
 app.use('/auth', DeleteEmail);
-app.use('/auth', sendGmail);
-app.use('/auth', sendOutlook);
-app.use('/auth', whats);
+
+app.use(sendGmail);
+app.use(sendOutlook);
+app.use(whats);
 
 
 app.use(express.static('Public'));
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(PORT, () => {
+  console.log('Servidor ouvindo na porta:' + PORT)
 })
