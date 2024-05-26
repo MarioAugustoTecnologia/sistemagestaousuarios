@@ -114,6 +114,15 @@ function handleFormSubmit(event){
                </Link>
              </li>
              <li className="w-100">
+                <Link
+                  to="/painel/Whatsapp"
+                  className="nav-link px-0 align-middle text-white"
+                >
+                  <i className="fs-4 bi-whatsapp ms-2"></i>
+                  <span className="ms-2 d-none d-sm-inline">Whatsapp:</span>
+                </Link>
+              </li>
+             <li className="w-100">
                <Link
                  to="/painel/emails_enviados"
                  className="nav-link px-0 align-middle text-white"

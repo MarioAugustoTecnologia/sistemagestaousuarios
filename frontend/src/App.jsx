@@ -25,7 +25,7 @@ function App() {
    <BrowserRouter>
     <Routes>   
     <Route path='/' element={<Login />}></Route>
-    <Route path='/painel' element={<Painel />}></Route>
+    <Route path='/painel' element={<PrivateRoutes><Painel /></PrivateRoutes>}></Route>
     <Route path='/painel/usuarios' element={<PrivateRoutes><Usuarios /></PrivateRoutes>}></Route>
     <Route path='/painel/add_usuarios' element={<PrivateRoutes><CadUsuarios /></PrivateRoutes>}></Route>
     <Route path='/painel/editar_usuario/:id' element={<PrivateRoutes><EditarUsuario /></PrivateRoutes>}/>
