@@ -10,7 +10,7 @@ const Email_Servico = () => {
    const navigate = useNavigate(); 
 
    const handlelogout = () => {
-         axios.get('http://localhost:3000/auth/logout')
+         axios.get('logout')
         .then(result => {
       if(result.data.Status){
         localStorage.removeItem('valid')

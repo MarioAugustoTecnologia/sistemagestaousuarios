@@ -15,7 +15,7 @@ const UsuarioCat = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3000/auth/usuario/categoria')
+    axios.get('usuario/categoria')
     .then(result => {
       if(result.data.Status) {
         setUsuarioCat(result.data.Result);
@@ -27,7 +27,7 @@ const UsuarioCat = () => {
   }, [])
 
   const handleDelete = (id) => {
-    axios.delete('http://localhost:3000/auth/excluir_usuario/'+id)
+    axios.delete('excluir_usuario/'+id)
     .then(result => {
       if(result.data.Status){
         window.location.reload()
@@ -38,7 +38,7 @@ const UsuarioCat = () => {
   } 
 
   const handlelogout = () => {
-    axios.get('http://localhost:3000/auth/logout')
+    axios.get('logout')
     .then(result => {
       if(result.data.Status){
           localStorage.removeItem('valid')

@@ -11,7 +11,7 @@ const CadUsuarios = () => {
     const [categoria, setCategoria] = useState([]);
 
   useEffect(() => {     
-    axios.get('http://localhost:3000/auth/categoria')
+    axios.get('categoria')
     .then(result => {
           if(result.data.Status){
           setCategoria(result.data.Result);
@@ -51,7 +51,7 @@ const CadUsuarios = () => {
       
           setErrors(validation(values));
           if(errors.nome === "" && errors.email === "" && errors.senha === "" && errors.data_nascimento === ""  && errors.cat_id === "" && errors.fone === "" && errors.image === "" && errors.salario === ""){
-          axios.post('http://localhost:3000/auth/cadastrar_usuario', formData)
+          axios.post('cadastrar_usuario', formData)
           .then(result => {
             if(result.data.Status){
               navigate('/painel/usuarios');
@@ -64,7 +64,7 @@ const CadUsuarios = () => {
         }       
        
     const handlelogout = () => {
-      axios.get('http://localhost:3000/auth/logout')
+      axios.get('logout')
       .then(result => {
         if(result.data.Status){
             localStorage.removeItem('valid')

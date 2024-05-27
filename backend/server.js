@@ -24,6 +24,9 @@ const sendOutlook = require('./Routes/sendOutlook');
 const whats = require('./Routes/Whats');
 const PORT = process.env.PORT || 3000;
 
+
+
+
 app.get('/', (req, res) => {
   res.send('Servidor ok!')
 })
@@ -62,6 +65,7 @@ app.use(whats);
 
 
 app.use(express.static('Public'));
+
 
 
 app.listen(PORT, () => {

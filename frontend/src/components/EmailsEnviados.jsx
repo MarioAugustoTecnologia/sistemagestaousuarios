@@ -16,7 +16,7 @@ const EmailsEnviados = () => {
  
   
 useEffect(() => {     
-    axios.get('http://localhost:3000/auth/emails_enviados')
+    axios.get('emails_enviados')
     .then(result => {
           if(result.data.Status){
           setEmail(result.data.Result);
@@ -52,7 +52,7 @@ const handleOnChange = () => {
   const handleDelete = (id) => {    
     
      if(IsChecked){
-         axios.delete('http://localhost:3000/auth/excluir_email/'+id)
+         axios.delete('excluir_email/'+id)
          .then(result => {
           if(result.data.Status){
           setEmail(result.data.Result); 
@@ -67,7 +67,7 @@ const handleOnChange = () => {
   }
 
   const handlelogout = () => {
-    axios.get('http://localhost:3000/auth/logout')
+    axios.get('logout')
     .then(result => {
       if(result.data.Status){
           localStorage.removeItem('valid')

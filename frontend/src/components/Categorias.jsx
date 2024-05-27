@@ -9,7 +9,7 @@ const Categorias = () => {
   const navigate = useNavigate();
 
   useEffect(() => {     
-    axios.get('http://localhost:3000/auth/categoria')
+    axios.get('categoria')
     .then(result => {
           if(result.data.Status){
           setCategoria(result.data.Result);
@@ -20,7 +20,7 @@ const Categorias = () => {
 }, []) 
 
 const handlelogout = () => {
-  axios.get('http://localhost:3000/auth/logout')
+  axios.get('logout')
   .then(result => {
     if(result.data.Status){
         localStorage.removeItem('valid')

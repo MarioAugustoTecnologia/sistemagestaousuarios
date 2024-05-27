@@ -189,7 +189,8 @@ const Usuarios = () => {
                   <Link to="/painel/add_usuarios" className="btn btn-success">Adicionar Usuario:</Link> 
                   <button style={{margin: '0 25px', backgroundColor: 'red', color: 'white'}} className="btn" onClick={() => generatePDF(recuperarconteudoparaPdf, personalizacao)}>Gerar PDF:</button>                                    
                   <Link to="/painel/usuario/nome" className="btn" style={{color: 'white', backgroundColor:'Orange'}}>Consulta por nome:</Link>
-                  <Link to="/painel/usuario/categoria" className="btn" style={{color: 'white', backgroundColor:'yellowgreen', margin: '0 25px'}}>Consulta por categoria:</Link> 
+                  <Link to="/painel/usuario/categoria" className="btn" style={{color: 'white', backgroundColor:'yellowgreen', margin: '0 25px'}}>Consulta por categoria:</Link>  <br />
+              
                 </div>              
                                    
        </div> 

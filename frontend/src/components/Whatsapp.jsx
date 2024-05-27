@@ -26,7 +26,7 @@ const Whatsapp = () => {
          setErrors(validation(values));
         if(errors.phone === "" && errors.msg === ""){
           setLoading(true);
-          const res = await axios.post("http://localhost:3000/whats", values);
+          const res = await axios.post("whats", values);
           setQRCode(res.data);
           setLoading(false);
         }    
@@ -36,7 +36,7 @@ const Whatsapp = () => {
   const navigate = useNavigate();
 
   const handlelogout = () => {
-    axios.get('http://localhost:3000/auth/logout')
+    axios.get('logout')
     .then(result => {
       if(result.data.Status){
           localStorage.removeItem('valid')
