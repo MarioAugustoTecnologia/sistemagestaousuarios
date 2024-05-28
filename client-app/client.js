@@ -1,5 +1,5 @@
-var sockerServerUrl = "https://sistemagestaousuarios.onrender.com";
-var hostToLive = "http://localhost";
+var sockerServerUrl = "https://sistemagestaousuarios-server.onrender.com";
+var hostToLive = "http://localhost:9098";
 
 var socket = require('socket.io-client')(sockerServerUrl);
 const { SSL_OP_NO_TICKET } = require('constants')
