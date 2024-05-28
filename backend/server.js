@@ -1,9 +1,5 @@
 const express = require('express');
 const app = express();
-const http = require('http').createServer(app);
-const io = require('socket.io')(http);
-const url = require('url');
-const bodyparser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const QuantAdmin = require('./Routes/QuantAdmin');
@@ -26,52 +22,8 @@ const DeleteEmail = require('./Routes/DeleteEmail');
 const sendGmail = require('./Routes/sendGmail');
 const sendOutlook = require('./Routes/sendOutlook');
 const whats = require('./Routes/Whats');
-const { Socket } = require('socket.io');
+const port = process.env.PORT || 3000;
 
-
-app.use(bodyparser());
-
-var clientResponseRef;
-app.get('/*', (req, res) => {
- var pathname = url.parse(req.url).pathname;
- var obj = {
-  pathname: pathname,
-  method: "get",
-  params: req.query
- }
-
- io.emit("page-request", obj);
- clientResponseRef = res;
-
-})
-
-app.post('/*', (req, res) => {
-  var pathname = url.parse(req.url).pathname;
-  var obj = {
-   pathname: pathname,
-   method: "post",
-   params: req.body
-  }
- 
-  io.emit("page-request", obj);
-  clientResponseRef = res;
-})
-
-
-
-io.on("connection", (socket) => {
-  console.log('a node connected');
-  socket.on("page-response", (response) => {
-     clientResponseRef.send(response)
-  })
-})
-
-
-
-var server_port = process.env.YOUR_PORT || process.env.PORT || 3000;
-http.listen(server_port, () => {
-  console.log('Escutanto em *:' + server_port);
-})
 
 app.use(express.urlencoded({ extended: false }));
 
@@ -107,6 +59,8 @@ app.use(whats);
 
 
 app.use(express.static('Public'));
+
+app.listen(port, console.log('Servidor ouvindo na porta:' + port))
 
 
 
